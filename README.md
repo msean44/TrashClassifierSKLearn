@@ -1,1 +1,1 @@
-# TrashClassifierTensorflow
+# TrashClassifierSKLearn
