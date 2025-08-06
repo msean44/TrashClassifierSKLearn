@@ -25,15 +25,13 @@ def load_image_data(root_dir, image_size=(64, 64)):
             except Exception as e:
                 print(f"Skipping {fpath}: {e}")
     return np.vstack(X), np.array(y), class_names
-
-# point to your "Trash Data/images" directory
-DATA_DIR = "Trash Data/images"
+    
+DATA_DIR = "Trash Data/images" #Training images path
 
 X, y, class_names = load_image_data(DATA_DIR)
 print(f"Loaded {X.shape[0]} samples with {X.shape[1]} features each.")
 
 # 2. Train/test split (binary classification assumed; adjust if multiclass)
-# If more than two classes, you can binarize or one-vs-rest
 if len(class_names) != 2:
     raise ValueError("This script assumes exactly two classes for ROC/KS. Found: " + str(class_names))
 
